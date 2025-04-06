@@ -36,6 +36,7 @@ public class Calculator {
         screen = screen + digit;
     }
 
+
     /**
      * Empfängt den Befehl der C- bzw. CE-Taste (Clear bzw. Clear Entry).
      * Einmaliges Drücken der Taste löscht die zuvor eingegebenen Ziffern auf dem Bildschirm

@@ -90,5 +90,22 @@ class CalculatorTest {
 
 
     //TODO hier weitere Tests erstellen
+    @Test
+    @DisplayName("should give the number 2 in percent")
+    void testPercent(){
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(2);
+        calc.pressUnaryOperationKey("%");
+
+        String expected = "0.02";
+        String actual = calc.readScreen();
+        assertEquals(expected, actual);
+
+    }
+
+    //Teilaufgabe 2
+
+
 }
 
