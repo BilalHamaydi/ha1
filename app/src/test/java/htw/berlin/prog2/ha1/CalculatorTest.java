@@ -90,6 +90,7 @@ class CalculatorTest {
 
 
     //TODO hier weitere Tests erstellen
+    //Teilaufgabe 1
     @Test
     @DisplayName("should give the number 2 in percent")
     void testPercent(){
@@ -103,8 +104,6 @@ class CalculatorTest {
         assertEquals(expected, actual);
 
     }
-
-    //Teilaufgabe 2
 
 
 }
