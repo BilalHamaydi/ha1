@@ -105,6 +105,39 @@ class CalculatorTest {
 
     }
 
+    //Teilaufgabe 2
+    @Test
+    @DisplayName("should test negative numbers")
+    void testNegativeNumber() {
+        Calculator calc = new Calculator();
 
+
+        calc.pressDigitKey(8);
+        calc.pressNegativeKey();
+        //calc.pressEqualsKey();     // Funktion vorhanden wenn kein Gleichheitszeichen eingegeben wird
+
+        String expected = "-8";
+        String actual = calc.readScreen();
+        assertEquals(expected, actual);
+
+    }
+
+    /*
+    * Fehler 1: Hier wird die Inverse Matrix als Infinity
+     */
+    @Test
+    @DisplayName("should test the inverse of 0. Should give an error")
+    void testInverseZero(){
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(0);
+
+        calc.pressUnaryOperationKey("1/x");
+
+        String expected = "Error";
+        String actual = calc.readScreen();
+        assertEquals(expected, actual);
+
+
+    }
 }
-
