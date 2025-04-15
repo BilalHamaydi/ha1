@@ -142,6 +142,7 @@ class CalculatorTest {
     }
 
     /*
+    * "Mein Commit Text war eigentlich für Fehler 2 gedacht"
     * Fehler 2: If you type the numnber 0 an the negative Key, it will be always negative. Zero should never be negative
      */
     @Test
