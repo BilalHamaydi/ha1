@@ -123,7 +123,7 @@ class CalculatorTest {
     }
 
     /*
-    * Fehler 1: Hier wird die Inverse Matrix als Infinity
+    * Fehler 1: Hier wird die Inverse Matrix als Infinity gekennzeichnet
      */
     @Test
     @DisplayName("should test the inverse of 0. Should give an error")
@@ -137,6 +137,27 @@ class CalculatorTest {
         String expected = "Error";
         String actual = calc.readScreen();
         assertEquals(expected, actual);
+
+
+    }
+
+    /*
+    * Fehler 2: If you type the numnber 0 an the negative Key, it will be always negative. Zero should never be negative
+     */
+    @Test
+    @DisplayName("should test if the number 0 can be negative")
+    void testNegativeZero(){
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(0);
+
+        calc.pressNegativeKey();
+        calc.pressEqualsKey();
+
+        String expected = "0";
+        String actual = calc.readScreen();
+        assertEquals(expected, actual);         //Number gets negative (Zero should be everytime positive/neutral)
+
 
 
     }
