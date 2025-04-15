@@ -89,6 +89,7 @@ public class Calculator {
 
         if(screen.equals("NaN")) screen = "Error";
         if(screen.contains(".") && screen.length() > 11) screen = screen.substring(0, 10);
+        //Fehlerbehebung von  Test InverseZero
         if (Double.isNaN(result) || Double.isInfinite(result)){
             screen = "Error";
         }
