@@ -106,6 +106,10 @@ class CalculatorTest {
     }
 
     //Teilaufgabe 2
+
+    /*
+    * Test, welcher schon vorher richtig war. Kein Fehler. Noch im Code um mögliche Folgefehler abzusichern
+     */
     @Test
     @DisplayName("should test negative numbers")
     void testNegativeNumber() {
