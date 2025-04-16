@@ -90,7 +90,10 @@ class CalculatorTest {
 
 
     //TODO hier weitere Tests erstellen
+
+
     //Teilaufgabe 1
+    // Test um die Prozentzahl zu berechnen
     @Test
     @DisplayName("should give the number 2 in percent")
     void testPercent(){
@@ -107,9 +110,8 @@ class CalculatorTest {
 
     //Teilaufgabe 2
 
-    /*
-    * Test, welcher schon vorher richtig war. Kein Fehler. Noch im Code um mögliche Folgefehler abzusichern
-     */
+
+    // Test, welcher schon vorher richtig war. Kein Fehler. Noch im Code um mögliche Folgefehler abzusichern
     @Test
     @DisplayName("should test negative numbers")
     void testNegativeNumber() {
@@ -127,6 +129,7 @@ class CalculatorTest {
     }
 
     /*
+    * Teilaufgabe 2 Fehler 1
     * Fehler 1: Hier wird die Inverse Matrix als Infinity gekennzeichnet
      */
     @Test
@@ -146,8 +149,9 @@ class CalculatorTest {
     }
 
     /*
+    * Teilaufgabe 2 Fehler 2
     * "Mein Commit Text war eigentlich für Fehler 2 gedacht"
-    * Fehler 2: If you type the numnber 0 an the negative Key, it will be always negative. Zero should never be negative
+    * Fehler 2: If you type the numnber 0 and the negative Key, it will be always negative. Zero should never be negative
      */
     @Test
     @DisplayName("should test if the number 0 can be negative")
@@ -155,13 +159,12 @@ class CalculatorTest {
         Calculator calc = new Calculator();
 
         calc.pressDigitKey(0);
-
         calc.pressNegativeKey();
-        calc.pressEqualsKey();
+
 
         String expected = "0";
         String actual = calc.readScreen();
-        assertEquals(expected, actual);         //Number gets negative (Zero should be everytime positive/neutral)
+        assertEquals(expected, actual);         //Nummer 0 wurde vorher immer zu -0 (0 sollte immer posititv/neutral sein)
 
 
 

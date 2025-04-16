@@ -78,24 +78,18 @@ public class Calculator {
         latestValue = Double.parseDouble(screen);
         latestOperation = operation;
 
-
         var result = switch(operation) {
             case "√" -> Math.sqrt(Double.parseDouble(screen));
             case "%" -> Double.parseDouble(screen) / 100;
-            // Teilaufgabe 3 fehler 1 (Schicker gelöst mit Ternary Operator)
+            // Teilaufgabe 3 Fehler 1 gelöst (Schicker gelöst mit Ternary Operator)
+            //Wenn der Screen 0 anzeigt wird NaN (Not a Number) ausgegeben = Error. Falls nicht, wird die Inverse berechnet.
             case "1/x" ->  (Double.parseDouble(screen) == 0) ? Double.NaN : 1 / Double.parseDouble(screen);         //neue Version
             default->  throw new IllegalArgumentException();
         };
         screen = Double.toString(result);
 
-
         if(screen.equals("NaN")) screen = "Error";
         if(screen.contains(".") && screen.length() > 11) screen = screen.substring(0, 10);
-
-        //Fehlerbehebung von  Test InverseZero              //alte Version
-        //if (Double.isNaN(result) || Double.isInfinite(result)){
-        //    screen = "Error";
-        //}
     }
 
     /**
@@ -118,6 +112,9 @@ public class Calculator {
      */
     public void pressNegativeKey() {
         screen = screen.startsWith("-") ? screen.substring(1) : "-" + screen;
+        //Teilaufgabe 3 Fehler 2 gelöst.
+        //Nach der Eingabe von 0 kann kein Minuszeichen mehr erscheinen
+        if(screen.equals("-0")) screen = "0";
     }
 
     /**
@@ -142,7 +139,6 @@ public class Calculator {
         if(screen.endsWith(".0")) screen = screen.substring(0,screen.length()-2);
         if(screen.contains(".") && screen.length() > 11) screen = screen.substring(0, 10);
 
-        //Teilaufgabe 3, Fehler 2, Die -0 wird ab jetzt egal was mit der normalen 0 ausgetauscht
-        if(screen.equals("-0") )screen = "0";
+
     }
 }
